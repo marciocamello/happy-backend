@@ -1,5 +1,5 @@
 import {Request, Response} from 'express';
-import {getRepository} from 'typeorm'
+import {DeleteResult, getRepository} from 'typeorm'
 import Orphanage from '../models/Orphanage';
 import OrphanageView from '../views/orphanages_view';
 import * as Yup from 'yup';
@@ -26,6 +26,32 @@ export default {
         });
 
         return res.json(OrphanageView.render(orphanage));
+    },
+    
+    async update(req: Request, res: Response){
+        
+        const orphanageRepository = getRepository(Orphanage); 
+        const {
+            id
+        } = req.params;
+        const orphanage = await orphanageRepository.findOneOrFail(id,{
+            relations: ['images']
+        });
+
+        return res.json(OrphanageView.render(orphanage));
+    },
+    
+    async delete(req: Request, res: Response){
+        
+        const orphanageRepository = getRepository(Orphanage); 
+        const {
+            id
+        } = req.params;
+        await orphanageRepository.delete(id);
+
+        return res.json({
+            message: 'Orphanage deleted with success'
+        });
     },
 
     async create(req: Request, res: Response){
@@ -57,7 +83,7 @@ export default {
             about,
             instructions,
             opening_hours,
-            open_on_weekends,
+            open_on_weekends: open_on_weekends==='true',
             images
         };
 
