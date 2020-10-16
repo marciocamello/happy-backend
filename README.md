@@ -1,6 +1,6 @@
 # Happy API - #NLW3
 
-![alt text](https://github.com/marciocamello/happy-bnackend/blob/master/layout.png)
+![alt text](https://github.com/marciocamello/happy-backend/blob/master/layout.png)
 
 ---
 
