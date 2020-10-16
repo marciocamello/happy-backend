@@ -19,10 +19,6 @@ export class createImages1602597385821 implements MigrationInterface {
                     type: 'varchar'
                 },
                 {
-                    name: 'info',
-                    type: 'text'
-                },
-                {
                     name: 'orphanage_id',
                     type: 'integer'
                 }

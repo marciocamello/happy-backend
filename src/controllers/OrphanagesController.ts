@@ -71,8 +71,7 @@ export default {
 
         const images = requestImages.map(image  => {
             return {
-                path: image.filename,
-                info: JSON.stringify(image)
+                path: image.filename
             }
         });
 
