@@ -37,7 +37,9 @@
 :blue_book: Refs
 
 - https://www.typescriptlang.org/docs/home/
-- https://knexjs.org/
+- https://typeorm.io/
+- https://github.com/expressjs/multer
+- https://github.com/jquense/yup
 - https://expressjs.com/en/4x/api.html
 
 ## API Tools
